@@ -2,7 +2,7 @@
 
 1. [高德官网申请Key](http://lbs.amap.com/dev/#/).
 2.  阅读[开发指南](http://lbs.amap.com/api/android-location-sdk/locationsummary/).Android
-3.  基于Weex 版本：0.56.0
+3.  基于Weex 版本：v1.3.11
 4. 本工程是基于React Native环境创建，并不是创建了一个library，如需要修改成library请参考[官网](https://facebook.github.io/react-native/docs/native-modules-setup)
 
 ## Weex 环境搭建
