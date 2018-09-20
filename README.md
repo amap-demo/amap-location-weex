@@ -219,3 +219,9 @@ export default {
 </script>
 ```
 
+## 运行
+
+```
+//在android设备上运行
+weex run android 
+```
