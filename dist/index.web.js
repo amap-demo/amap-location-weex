@@ -22009,7 +22009,7 @@ var Component = __webpack_require__(3)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "/Users/hongming.wang/mywork/amap-location-weex/src/components/HelloWorld.vue"
+Component.options.__file = "/Users/whj/gitPro/newWeex/amap-location-weex/src/components/HelloWorld.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] HelloWorld.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -22073,7 +22073,7 @@ var Component = __webpack_require__(3)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "/Users/hongming.wang/mywork/amap-location-weex/src/index.vue"
+Component.options.__file = "/Users/whj/gitPro/newWeex/amap-location-weex/src/index.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] index.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -22528,14 +22528,14 @@ exports.default = {
       weex.requireModule('amapLocation').getLocation(true, function (loc) {
         var str;
         if (loc.code != 0) {
-          _this.result = '定位失败\n，errorCode:' + loc.code + '\n错误说明：' + loc.errorDetail;
-          console.error('定位失败：' + loc.code + "," + loc.errorDetail);
+          _this.result = '单次-定位失败\n，errorCode:' + loc.code + '\n错误说明：' + loc.errorDetail;
+          console.error('单次-定位失败：' + loc.code + "," + loc.errorDetail);
         } else {
-          str = '定位成功\n' + '经纬度：' + loc.lon + ',' + loc.lat + '\n';
+          str = '单次-定位成功\n' + '经纬度：' + loc.lon + ',' + loc.lat + '\n';
           if (loc.addr != 'undefined' && loc.addr != null && loc.addr != '') {
             str += '地址：' + loc.addr + '\n';
           }
-          str += '回调时间：' + loc.callbackTime;
+          str += '回调时间：' + loc.locTime;
           _this.result = str;
         }
       });
@@ -22546,20 +22546,21 @@ exports.default = {
       weex.requireModule('amapLocation').watchLocation(false, 2000, function (loc) {
         var str;
         if (loc.code != 0) {
-          _this2.result = '定位失败\n，errorCode:' + loc.code + '\n错误说明：' + loc.errorDetail;
-          console.error('定位失败：' + loc.code + "," + loc.errorDetail);
+          _this2.result = '多次-定位失败\n，errorCode:' + loc.code + '\n错误说明：' + loc.errorDetail;
+          console.error('多次-定位失败：' + loc.code + "," + loc.errorDetail);
         } else {
-          str = '定位成功\n' + '经纬度：' + loc.lon + ',' + loc.lat + '\n';
+          str = '多次-定位成功\n' + '经纬度：' + loc.lon + ',' + loc.lat + '\n';
           if (loc.addr != 'undefined' && loc.addr != null && loc.addr != '') {
             str += '地址：' + loc.addr + '\n';
           }
-          str += '回调时间：' + loc.callbackTime;
+          str += '回调时间：' + loc.locTime;
           _this2.result = str;
         }
       });
     },
     stopLocation: function stopLocation() {
       weex.requireModule('amapLocation').stopLocation();
+      this.result = '已停止定位';
     }
   }
 };

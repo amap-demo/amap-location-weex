@@ -11,6 +11,7 @@
 #import <WeexSDK/WeexSDK.h>
 #import "WXDemoViewController.h"
 #import "WXImgLoaderDefaultImpl.h"
+#import "WXAMapLocationModule.h"
 
 @implementation WeexSDKManager
 
@@ -48,6 +49,7 @@
     [WXAppConfiguration setExternalUserAgent:@"ExternalUA"];
     
     [WXSDKEngine initSDKEnvironment];
+    [WXSDKEngine registerModule:@"amapLocation" withClass:[WXAMapLocationModule class]];
     
     [WXSDKEngine registerHandler:[WXImgLoaderDefaultImpl new] withProtocol:@protocol(WXImgLoaderProtocol)];
     

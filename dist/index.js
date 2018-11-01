@@ -2760,7 +2760,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "/Users/hongming.wang/mywork/amap-location-weex/src/components/HelloWorld.vue"
+__vue_options__.__file = "/Users/whj/gitPro/newWeex/amap-location-weex/src/components/HelloWorld.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__.style = __vue_options__.style || {}
@@ -2814,7 +2814,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "/Users/hongming.wang/mywork/amap-location-weex/src/index.vue"
+__vue_options__.__file = "/Users/whj/gitPro/newWeex/amap-location-weex/src/index.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-2964abc9"
@@ -2930,14 +2930,14 @@ exports.default = {
       weex.requireModule('amapLocation').getLocation(true, function (loc) {
         var str;
         if (loc.code != 0) {
-          _this.result = '定位失败\n，errorCode:' + loc.code + '\n错误说明：' + loc.errorDetail;
-          console.error('定位失败：' + loc.code + "," + loc.errorDetail);
+          _this.result = '单次-定位失败\n，errorCode:' + loc.code + '\n错误说明：' + loc.errorDetail;
+          console.error('单次-定位失败：' + loc.code + "," + loc.errorDetail);
         } else {
-          str = '定位成功\n' + '经纬度：' + loc.lon + ',' + loc.lat + '\n';
+          str = '单次-定位成功\n' + '经纬度：' + loc.lon + ',' + loc.lat + '\n';
           if (loc.addr != 'undefined' && loc.addr != null && loc.addr != '') {
             str += '地址：' + loc.addr + '\n';
           }
-          str += '回调时间：' + loc.callbackTime;
+          str += '回调时间：' + loc.locTime;
           _this.result = str;
         }
       });
@@ -2948,20 +2948,21 @@ exports.default = {
       weex.requireModule('amapLocation').watchLocation(false, 2000, function (loc) {
         var str;
         if (loc.code != 0) {
-          _this2.result = '定位失败\n，errorCode:' + loc.code + '\n错误说明：' + loc.errorDetail;
-          console.error('定位失败：' + loc.code + "," + loc.errorDetail);
+          _this2.result = '多次-定位失败\n，errorCode:' + loc.code + '\n错误说明：' + loc.errorDetail;
+          console.error('多次-定位失败：' + loc.code + "," + loc.errorDetail);
         } else {
-          str = '定位成功\n' + '经纬度：' + loc.lon + ',' + loc.lat + '\n';
+          str = '多次-定位成功\n' + '经纬度：' + loc.lon + ',' + loc.lat + '\n';
           if (loc.addr != 'undefined' && loc.addr != null && loc.addr != '') {
             str += '地址：' + loc.addr + '\n';
           }
-          str += '回调时间：' + loc.callbackTime;
+          str += '回调时间：' + loc.locTime;
           _this2.result = str;
         }
       });
     },
     stopLocation: function stopLocation() {
       weex.requireModule('amapLocation').stopLocation();
+      this.result = '已停止定位';
     }
   }
 };

@@ -11,6 +11,7 @@
 #import <WeexSDK/WeexSDK.h>
 #import <AVFoundation/AVFoundation.h>
 #import "WeexSDKManager.h"
+#import <AMapFoundationKit/AMapFoundationKit.h>
 
 @interface AppDelegate ()
 @end
@@ -26,6 +27,8 @@
     self.window.backgroundColor = [UIColor whiteColor];
     
     [WeexSDKManager setup];
+    // 这里是到 https://lbs.amap.com/dev/key/app 开放平台申请应用的key，设置到这里
+    [AMapServices sharedServices].apiKey =@"e01af1105b9966f6f3947b0648712a4f";
     
     [self.window makeKeyAndVisible];
     
@@ -35,7 +38,7 @@
     return YES;
 }
 
-#pragma mark 
+#pragma mark
 #pragma mark animation when startup
 
 - (void)startSplashScreen

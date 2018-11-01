@@ -5,11 +5,11 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>WeexPlayground</string>
+	<string>WeexApp</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
-	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	<string>com.alibaba.weex</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -17,11 +17,11 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.1</string>
+	<string>0.1</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>0.1.0</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>
@@ -50,5 +50,31 @@
 	<false/>
 	<key>NSCameraUsageDescription</key>
 	<string></string>
+  <key>WXEntryBundleURL</key>
+  <string>bundlejs/index.js</string>
+  <key>WXSocketConnectionURL</key>
+  <string>ws://30.28.179.80:8082</string>
+  <key>WXEntryBundleURL</key>
+  <string>bundlejs/index.js</string>
+  <key>WXSocketConnectionURL</key>
+  <string>ws://30.28.179.80:8082</string>
+  <key>WXEntryBundleURL</key>
+  <string>bundlejs/index.js</string>
+  <key>WXSocketConnectionURL</key>
+  <string>ws://30.28.179.80:8084</string>
+  <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+  <string>路过导航需要您的定位服务，否则可能无法使用，如果您需要使用后台导航功能请选择“始终允许”。</string>
+  <key>NSLocationAlwaysUsageDescription</key>
+  <string>路过导航需要您的定位服务，否则可能无法使用。</string>
+  <key>NSLocationWhenInUseUsageDescription</key>
+  <string>路过导航需要您的定位服务，否则可能无法使用。</string>
+  <key>WXEntryBundleURL</key>
+  <string>bundlejs/index.js</string>
+  <key>WXSocketConnectionURL</key>
+  <string>ws://30.28.179.80:8083</string>
+  <key>WXEntryBundleURL</key>
+  <string>bundlejs/index.js</string>
+  <key>WXSocketConnectionURL</key>
+  <string>ws://30.28.179.80:8083</string>
 </dict>
 </plist>

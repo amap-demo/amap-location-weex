@@ -34,15 +34,15 @@ export default {
 			   weex.requireModule('amapLocation').getLocation(true, loc => {
             var str;
             if(loc.code != 0){
-              this.result = '定位失败\n，errorCode:' + loc.code + '\n错误说明：' + loc.errorDetail
-              console.error('定位失败：' + loc.code + "," + loc.errorDetail)
+              this.result = '单次-定位失败\n，errorCode:' + loc.code + '\n错误说明：' + loc.errorDetail
+              console.error('单次-定位失败：' + loc.code + "," + loc.errorDetail)
             } else {
-              str = '定位成功\n'
+              str = '单次-定位成功\n'
               + '经纬度：' + loc.lon + ',' + loc.lat + '\n'
               if(loc.addr != 'undefined' && loc.addr != null && loc.addr != ''){
                 str += '地址：' + loc.addr +'\n'
               }
-              str += '回调时间：' + loc.callbackTime
+              str += '回调时间：' + loc.locTime
               this.result = str
             }
            });
@@ -51,21 +51,22 @@ export default {
         weex.requireModule('amapLocation').watchLocation(false, 2000, loc => {
         var str;
         if(loc.code != 0){
-          this.result = '定位失败\n，errorCode:' + loc.code + '\n错误说明：' + loc.errorDetail
-          console.error('定位失败：' + loc.code + "," + loc.errorDetail)
+          this.result = '多次-定位失败\n，errorCode:' + loc.code + '\n错误说明：' + loc.errorDetail
+          console.error('多次-定位失败：' + loc.code + "," + loc.errorDetail)
         } else {
-          str = '定位成功\n'
+          str = '多次-定位成功\n'
           + '经纬度：' + loc.lon + ',' + loc.lat + '\n'
           if(loc.addr != 'undefined' && loc.addr != null && loc.addr != ''){
             str += '地址：' + loc.addr +'\n'
           }
-          str += '回调时间：' + loc.callbackTime
+          str += '回调时间：' + loc.locTime
           this.result = str
         }
        });
 			},
 			stopLocation: function() {
         weex.requireModule('amapLocation').stopLocation();
+          this.result = '已停止定位';
 			},
 		}
 }
