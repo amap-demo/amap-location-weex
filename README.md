@@ -209,8 +209,6 @@ public List<ViewManager> createViewManagers(ReactApplicationContext reactContext
 
     @implementation WXAMapLocationModule
     
-    ###Js中调用 在src/index.vue中实现对定位的调用
-    
     WX_EXPORT_METHOD_SYNC(@selector(getLocation:completionBlock:))
     WX_EXPORT_METHOD_SYNC(@selector(watchLocation:interval:repeatLocationBlock:))
     WX_EXPORT_METHOD_SYNC(@selector(stopLocation))
@@ -284,10 +282,10 @@ public List<ViewManager> createViewManagers(ReactApplicationContext reactContext
 * 在`WeexSDKManager`类中注册模块
   `[WXSDKEngine registerModule:@"amapLocation" withClass:[WXAMapLocationModule class]];`
 
+***
 
 
-
-###Js中调用
+### Js中调用
 在src/index.vue中实现对定位的调用
 
 ```
