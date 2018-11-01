@@ -343,6 +343,8 @@ export default {
 ## 运行
 
 ```
+//初始化运行环境
+npm install
 //在android、iOS设备上运行
 weex run android / ios
 ```

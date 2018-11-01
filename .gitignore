@@ -41,4 +41,5 @@ captures/
 .DS_Store
 
 node_modules
+Pods
 .idea
