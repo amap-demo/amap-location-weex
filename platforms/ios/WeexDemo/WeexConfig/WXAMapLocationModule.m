@@ -85,6 +85,7 @@ WX_EXPORT_METHOD_SYNC(@selector(stopLocation))
  */
 - (NSDictionary *)createResultDictWithLocation:(CLLocation *)location LocationReGeocode:(AMapLocationReGeocode *)regeocode error:(NSError *)error {
     NSMutableDictionary *result = [NSMutableDictionary dictionary];
+    [self setDict:result Value:[self getFormatTime:[NSDate date]] forKey:@"callbackTime"];
     if (location && error.code == 0) {
         [self setDict:result Value:@"0" forKey:@"code"];
         [self setDict:result Value:@(location.coordinate.latitude).description forKey:@"lat"];
