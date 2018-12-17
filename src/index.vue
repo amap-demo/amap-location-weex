@@ -59,7 +59,8 @@ export default {
           if(loc.addr != 'undefined' && loc.addr != null && loc.addr != ''){
             str += '地址：' + loc.addr +'\n'
           }
-          str += '回调时间：' + loc.locTime
+          str += '定位时间：' + loc.locTime + '\n'
+          str += '回调时间：' + loc.callbackTime
           this.result = str
         }
        });

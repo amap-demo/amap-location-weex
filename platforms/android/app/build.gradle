@@ -81,5 +81,5 @@ dependencies {
     compile 'com.taobao.android:weexplugin-annotation:1.3'
     // PLUGIN GRADLE EXTENSIONS END
     //引入高德定位SDK的
-    compile 'com.amap.api:location:4.2.0'
+    compile 'com.amap.api:location:4.4.0'
 }
